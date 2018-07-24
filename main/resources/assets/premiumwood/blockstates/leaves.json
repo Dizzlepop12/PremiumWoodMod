@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "check_decay=true,decayable=true,variant=ironwood": { "model": "premiumwood:leaves_ironwood" },
+        "check_decay=true,decayable=false,variant=ironwood": { "model": "premiumwood:leaves_ironwood" },
+        "check_decay=false,decayable=true,variant=ironwood": { "model": "premiumwood:leaves_ironwood" },
+        "check_decay=false,decayable=false,variant=ironwood": { "model": "premiumwood:leaves_ironwood" }
+    }
+}

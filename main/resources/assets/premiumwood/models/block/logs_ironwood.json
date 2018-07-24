@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "premiumwood:blocks/logs_ironwood_top",
+        "side": "premiumwood:blocks/logs_ironwood_side"
+    }
+}

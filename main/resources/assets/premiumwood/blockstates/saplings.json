@@ -1,0 +1,7 @@
+{
+    "variants": 
+    {
+        "stage=0,variant=ironwood": { "model": "premiumwood:saplings_ironwood" },
+        "stage=1,variant=ironwood": { "model": "premiumwood:saplings_ironwood" }
+    }
+}

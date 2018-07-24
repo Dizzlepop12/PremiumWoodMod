@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y,variant=ironwood": { "model": "premiumwood:logs_ironwood" },
+        "axis=z,variant=ironwood": { "model": "premiumwood:logs_ironwood", "x": 90 },
+        "axis=x,variant=ironwood": { "model": "premiumwood:logs_ironwood", "x": 90, "y": 90 },
+        "axis=none,variant=ironwood": { "model": "premiumwood:logs_ironwood" }
+    }
+}
