@@ -153,11 +153,13 @@ public class BlockModSapling extends BlockBush implements IGrowable, IMetaName, 
 		switch((EnumHandler.EnumType)state.getValue(VARIANT)) {
 		case IRONWOOD:
 			gen = new WorldGenIronwoodTree();
+			System.out.print("Generated tree");
 			break;
 		}
 		
 		IBlockState iblockstate = Blocks.AIR.getDefaultState();
 		if(flag) {
+			System.out.print("Problem generating tree");
 			world.setBlockState(pos.add(i, 0, j), iblockstate, 4);
 			world.setBlockState(pos.add(i + 1, 0, j), iblockstate, 4);
 			world.setBlockState(pos.add(i, 0, j + 1), iblockstate, 4);
@@ -169,6 +171,7 @@ public class BlockModSapling extends BlockBush implements IGrowable, IMetaName, 
 		
 		if(!gen.generate(world, rand, pos.add(i, 0, j))) {
 			if(flag) {
+				System.out.print("Problem generating tree");
 				world.setBlockState(pos.add(i, 0, j), iblockstate, 4);
 				world.setBlockState(pos.add(i + 1, 0, j), iblockstate, 4);
 				world.setBlockState(pos.add(i, 0, j + 1), iblockstate, 4);
