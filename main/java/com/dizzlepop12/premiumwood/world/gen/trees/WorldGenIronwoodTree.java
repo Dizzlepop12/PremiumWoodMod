@@ -17,22 +17,19 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-public class WorldGenIronwoodTree extends WorldGenAbstractTree 
-{
+public class WorldGenIronwoodTree extends WorldGenAbstractTree {
 	public static final IBlockState LOG = PWBlocks.LOGS.getDefaultState().withProperty(BlockModLog.VARIANT, EnumHandler.EnumType.IRONWOOD);
 	public static final IBlockState LEAF = PWBlocks.LEAVES.getDefaultState().withProperty(BlockModLeaves.VARIANT, EnumHandler.EnumType.IRONWOOD);
 	
 	private final int minHeight;
 	
-	public WorldGenIronwoodTree() 
-	{
+	public WorldGenIronwoodTree() {
 		super(false);
 		this.minHeight = 12;
 	}
 
 	@Override
-	public boolean generate(World world, Random rand, BlockPos pos) 
-	{
+	public boolean generate(World world, Random rand, BlockPos pos) {
 		int height = this.minHeight + rand.nextInt(3);
 		boolean flag = true;
 		

@@ -39,7 +39,12 @@ public class WorldGenPremiumTrees implements IWorldGenerator {
 		ArrayList<Class<?>> classesList = new ArrayList<Class<?>>(Arrays.asList(classes));
 		int heightDiff = maxHeight - minHeight + 1;
 		for(int i = 0; i < chancesToSpawn; i++) {
-			BlockPos pos = new BlockPos(chunkX * 16 + 10 + random.nextInt(15), minHeight + random.nextInt(heightDiff), chunkZ * 16 + 10 + random.nextInt(15));
+			
+			BlockPos pos = new BlockPos(
+					chunkX * 16 + 10 + random.nextInt(15), 
+					minHeight + random.nextInt(heightDiff), 
+					chunkZ * 16 + 10 + random.nextInt(15));
+			
 			if(minHeight < 0) pos = world.getHeight(pos);
 			Class<?> biome = world.provider.getBiomeForCoords(pos).getClass();
 			if(classesList.contains(biome) || classes.length == 0) generator.generate(world, random, pos);
