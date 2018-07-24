@@ -5,6 +5,7 @@ import com.dizzlepop12.premiumwood.init.PWBlocks;
 import com.dizzlepop12.premiumwood.init.PWItems;
 import com.dizzlepop12.premiumwood.util.IHasModel;
 import com.dizzlepop12.premiumwood.util.IMetaName;
+import com.dizzlepop12.premiumwood.util.ItemBlockVarients;
 import com.dizzlepop12.premiumwood.util.handlers.EnumHandler;
 
 import net.minecraft.block.Block;
@@ -41,7 +42,7 @@ public class BlockModPlanks extends Block implements IMetaName, IHasModel {
 		this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		this.name = name;
 		PWBlocks.BLOCKS.add(this);
-		PWItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		PWItems.ITEMS.add(new ItemBlockVarients(this).setRegistryName(this.getRegistryName()));
 
 	}
 

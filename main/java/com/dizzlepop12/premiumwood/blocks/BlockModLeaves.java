@@ -10,6 +10,7 @@ import com.dizzlepop12.premiumwood.init.PWBlocks;
 import com.dizzlepop12.premiumwood.init.PWItems;
 import com.dizzlepop12.premiumwood.util.IHasModel;
 import com.dizzlepop12.premiumwood.util.IMetaName;
+import com.dizzlepop12.premiumwood.util.ItemBlockVarients;
 import com.dizzlepop12.premiumwood.util.handlers.EnumHandler;
 import com.dizzlepop12.premiumwood.util.handlers.EnumHandler.EnumType;
 import com.google.common.base.Predicate;
@@ -69,7 +70,7 @@ public class BlockModLeaves extends BlockLeaves implements IMetaName, IHasModel 
 		this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		
 		PWBlocks.BLOCKS.add(this);
-		PWItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		PWItems.ITEMS.add(new ItemBlockVarients(this).setRegistryName(this.getRegistryName()));
 
 	}
 
@@ -82,7 +83,7 @@ public class BlockModLeaves extends BlockLeaves implements IMetaName, IHasModel 
 		this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		
 		PWBlocks.BLOCKS.add(this);
-		PWItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		PWItems.ITEMS.add(new ItemBlockVarients(this).setRegistryName(this.getRegistryName()));
 	}
 	
 	/* public BlockModLeaves(String name, Material m, Block sapling) {

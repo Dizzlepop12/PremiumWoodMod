@@ -7,6 +7,7 @@ import com.dizzlepop12.premiumwood.init.PWBlocks;
 import com.dizzlepop12.premiumwood.init.PWItems;
 import com.dizzlepop12.premiumwood.util.IHasModel;
 import com.dizzlepop12.premiumwood.util.IMetaName;
+import com.dizzlepop12.premiumwood.util.ItemBlockVarients;
 import com.dizzlepop12.premiumwood.util.handlers.EnumHandler;
 import com.google.common.base.Predicate;
 
@@ -46,7 +47,7 @@ public class BlockModLog extends BlockLog implements IMetaName, IHasModel{
 		this.name = name;
 		
 		PWBlocks.BLOCKS.add(this);
-		PWItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		PWItems.ITEMS.add(new ItemBlockVarients(this).setRegistryName(this.getRegistryName()));
 
 	}
 
