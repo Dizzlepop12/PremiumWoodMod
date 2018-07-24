@@ -67,6 +67,7 @@ public class BlockModLeaves extends BlockLeaves implements IMetaName, IHasModel 
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setSoundType(SoundType.PLANT);
+		this.setLightOpacity(1);
 		this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		
 		PWBlocks.BLOCKS.add(this);
@@ -80,6 +81,7 @@ public class BlockModLeaves extends BlockLeaves implements IMetaName, IHasModel 
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setSoundType(SoundType.PLANT);
+		this.setLightOpacity(1);
 		this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		
 		PWBlocks.BLOCKS.add(this);
@@ -152,31 +154,51 @@ public class BlockModLeaves extends BlockLeaves implements IMetaName, IHasModel 
 	public net.minecraft.block.BlockPlanks.EnumType getWoodType(int meta) {return null;}
 	
 	@Override
-	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) 
-	{
+	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 		return NonNullList.withSize(1, new ItemStack(this, 1, world.getBlockState(pos).getValue(VARIANT).getMeta()));
 	}
 	
 	@Override
-	protected BlockStateContainer createBlockState() 
-	{
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+        return Item.getItemFromBlock(PWBlocks.SAPLINGS);
+    }
+	
+	@Override
+	protected BlockStateContainer createBlockState() {
 		return new BlockStateContainer(this, new IProperty[] {VARIANT,DECAYABLE,CHECK_DECAY});
 	}
 	
 	@Override
-	public boolean isOpaqueCube(IBlockState state) 
-	{
+	public boolean isLeaves(IBlockState state, IBlockAccess world, BlockPos pos) {
+		return true;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.CUTOUT_MIPPED;
+	}
+
+	@Override
+	public boolean isOpaqueCube(IBlockState state) {
 		return false;
+	}
+
+	@Override
+	public boolean isFullCube(IBlockState state) {
+		return false;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos,  EnumFacing side) {
+		return true;
 	}
 	
 	@Override
-	public BlockRenderLayer getBlockLayer() 
-	{
-		return BlockRenderLayer.TRANSLUCENT;
-	}	
-	
-	@Override
 	public void registerModels() {
-		PremiumWood.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+		for(int i = 0; i < EnumHandler.EnumType.values().length; i++) {
+			PremiumWood.proxy.registerVariantRenderer(Item.getItemFromBlock(this), i, "leaves_" + EnumHandler.EnumType.values()[i].getName(), "inventory");
+		}
 	}
 }

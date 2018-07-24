@@ -129,7 +129,9 @@ public class BlockModSapling extends BlockBush implements IGrowable, IMetaName, 
 
 	@Override
 	public void registerModels() {
-		PremiumWood.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+		for(int i = 0; i < EnumHandler.EnumType.values().length; i++) {
+			PremiumWood.proxy.registerVariantRenderer(Item.getItemFromBlock(this), i, "saplings_" + EnumHandler.EnumType.values()[i].getName(), "inventory");
+		}
 	}
 	
 	@Override

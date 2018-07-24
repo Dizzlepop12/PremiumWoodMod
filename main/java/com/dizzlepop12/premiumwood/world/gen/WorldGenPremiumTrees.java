@@ -24,7 +24,7 @@ public class WorldGenPremiumTrees implements IWorldGenerator {
 		case 1:		
 			break;		
 		case 0:
-			runGenerator(IRONWOOD, world, random, chunkX, chunkZ, 3, -1, 0, BiomeDesert.class);
+			runGenerator(IRONWOOD, world, random, chunkX, chunkZ, 10, -1, 0, BiomeDesert.class);
 			break;	
 		case -1:		
 		}

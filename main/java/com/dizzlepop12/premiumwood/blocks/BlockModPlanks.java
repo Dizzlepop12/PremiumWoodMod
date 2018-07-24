@@ -90,6 +90,8 @@ public class BlockModPlanks extends Block implements IMetaName, IHasModel {
 	
 	@Override
 	public void registerModels() {
-		PremiumWood.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+		for(int i = 0; i < EnumHandler.EnumType.values().length; i++) {
+			PremiumWood.proxy.registerVariantRenderer(Item.getItemFromBlock(this), i, "planks_" + EnumHandler.EnumType.values()[i].getName(), "inventory");
+		}
 	}
 }
